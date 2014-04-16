@@ -1,0 +1,10 @@
+#!/bin/sh
+    exec 2>&1
+    echo 'git-daemon starting.'
+    exec chpst -ugit:git \
+      /usr/lib/git-core/git-daemon \
+      --reuseaddr \
+      --syslog \
+      --verbose \
+      --base-path=/home/git/repositories \
+      /home/git/repositories
